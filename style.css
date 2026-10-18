@@ -1,0 +1,395 @@
+* {
+
+    margin: 0; /*l'espai exterior*/
+    padding: 0; /*l espai interior*/
+    box-sizing: border-box; /*per incloure el padding i la vora dins la dimensió definida*/
+}
+
+html {
+    scroll-behavior: smooth; /*salta suaument on toca (per exmeple al botó, view my projects)*/
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #F8F9FC;
+    color: #1E293B;
+}
+
+header {
+    background-color: #FFFFFF;
+    padding: 30px 80px;
+
+    display: flex; /*activem el flexbox (per defecte elements posa en horitzontal*/
+    justify-content: space-between; /*distribueix els elements deixant espai max entre ells*/
+    align-items: center; /*centre verticalment els elements dins de la fila*/
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    gap: 40px; /*els enllaços del menú tenen una separació de 40*/
+}
+
+nav a {
+    text-decoration: none; /*podria ser per subratllar, per exemple*/
+    color: #1E293B;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+nav a:hover { /*aplica un estil quan passes el ratolí per sobre*/
+    color: #6366F1; /*modifica color de text*/
+}
+
+/* Estils generals de les seccions */
+.cv-section {
+    padding: 80px 100px;
+}
+
+.section-heading {
+    margin-bottom: 32px; /*espai per sota d'un element*/
+}
+
+.section-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6366F1;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1E293B;
+    margin-bottom: 16px;
+}
+
+.section-line {
+    width: 100px;
+    height: 4px;
+    background-color: #6366F1; /*modifica fons de l element*/
+}
+
+
+/* APARTAT HERO*/
+
+.hero {
+    background-color: #F8F9FC;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 80px 100px;
+    gap: 60px; /*la separació entre elements d'un flexbox*/
+}
+
+/* Columna esquerra */
+.hero-text {
+    flex: 1; /*l element pot creixer per ocupar l espai disponible*/
+}
+
+.hero-text h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1E293B;
+    margin-bottom: 16px;
+}
+
+.hero-text h3 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #475569;
+    margin-bottom: 24px;
+}
+
+.hero-text p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #64748B;
+    margin-bottom: 24px;
+    max-width: 600px; /*amplada max*/
+}
+
+/* Botó */
+.hero-button {
+    display: inline-block;
+    background-color: #6366F1;
+    color: white;
+
+    padding: 14px 24px;
+    border-radius: 8px; /*arrodoneix cantonades*/
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.hero-button:hover {
+    background-color: #4F46E5;
+}
+
+/* Columna dreta: fotografia */
+.hero-image img {
+    width: 320px;                   /*amplada*/
+    height: 320px;                  /*alçada*/
+
+    object-fit: cover; /*així omple el quadrat sense deformar-se (si cal retalla)*/
+    border-radius: 20px;
+}
+
+
+/* APARTAT EDUCATION*/
+
+.education {
+    background-color: #F8F9FC;
+}
+
+/* informació a l'esquerra i data a la dreta */
+.education-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /*alinea els elements a l inici de l eix (a dalt, en una fila)*/
+    gap: 40px;
+    margin-bottom: 32px;
+}
+
+/* Info acadèmica */
+.education-details {
+    flex: 1;
+}
+
+.education-details h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 8px;
+}
+
+.education-details p {
+    font-size: 16px;
+    color: #64748B;
+    line-height: 1.5;
+}
+
+/*Descripció del grau*/
+.education-description {
+    margin-top: 12px;
+}
+
+/*Dates*/
+.education-date {
+    color: #6366F1;
+    font-size: 14px;
+    white-space: nowrap; /*evitem que un text es divideixi en diverses línies*/
+}
+
+
+/* APARTAT SKILLS */
+
+.skills {
+    background-color: #FFFFFF;
+}
+
+/*Distribució de les dues columnes*/
+.skills-columns {
+    display: flex;
+    justify-content: space-between; /*separa els elements cap als extrems*/
+    gap: 80px;
+}
+
+/*Cada columna ocupa una part de l'espai*/
+.skills-group {
+    flex: 1;
+}
+
+/* Títols de SOFT I TECHNICAL */
+.skills-group h3 {
+    font-size: 20px;
+    font-weight: 600; /*gruix de la lletra*/
+    color: #1E293B;
+    margin-bottom: 16px;
+}
+
+/* Llista de competències */
+.skills-group ul {
+    list-style: none; /*elimina els punts que apareixen per defecte a les llistes HTML*/
+    padding: 0;
+}
+
+.skills-group li {
+    font-size: 16px;
+    color: #64748B;
+    line-height: 1.8; /*separació entre les línies*/
+    margin-bottom: 8px;
+}
+
+
+/*APARTAT EXPERIENCE*/
+
+.experience {
+    background-color: #F8F9FC;
+}
+
+/* Cada experiència: text a l'esquerra i data a la dreta */
+.experience-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 32px;
+}
+
+/*Informació de l'experiència*/
+.experience-details {
+    flex: 1;
+}
+
+.experience-details h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 8px;
+}
+
+.experience-details p {
+    font-size: 16px;
+    color: #64748B;
+    line-height: 1.5;
+}
+
+/* Descripció de l'experiència */
+.experience-description {
+    margin-top: 12px;
+}
+
+/* Dates */
+.experience-date {
+    color: #6366F1;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+
+/*APARTAT PROJECTS*/
+
+.projects {
+    background-color: #FFFFFF;
+}
+
+/* Distribució de cada projecte */
+.project-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 32px;
+}
+
+/* Informació del projecte */
+.project-details {
+    flex: 1;
+}
+
+.project-details h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 8px;
+}
+
+.project-details p {
+    font-size: 16px;
+    color: #64748B;
+    line-height: 1.5;
+}
+
+/* Descripció */
+.project-description {
+    margin-top: 12px;
+}
+
+/* Any del projecte */
+.project-date {
+    color: #6366F1;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+
+/*APARTAT CONTACTS*/
+
+.contact {
+    background-color: #F8F9FC;
+}
+
+.contact-info {
+    display: flex;
+    gap: 80px;
+}
+
+.contact-item h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1E293B;
+    margin-bottom: 8px;
+}
+
+.contact-item a {
+    font-size: 15px;
+    color: #64748B;
+    text-decoration: none; 
+}
+
+.contact-item a:hover {
+    color: #6366F1;
+    text-decoration: underline;
+}
+
+
+/* APARTAT ABOUT ME*/
+
+.about-description {
+    font-size: 16px;
+    color: #64748B;
+    line-height: 30px;
+}
+
+
+.contact-info {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.contact-text h3 {
+    font-size: 16px;
+    color: #1E293B;
+    margin-bottom: 6px;
+}
+
+.contact-text a {
+    font-size: 14px;
+    color: #64748B;
+    text-decoration: none;
+}
+
+.contact-text a:hover {
+    color: #6366F1;
+}
